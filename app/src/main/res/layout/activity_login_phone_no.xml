@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="30dp"
+        android:background="@color/white"
+        tools:context=".LoginPhoneNo">
+
+        <TextView
+            android:id="@+id/getOtp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="@string/getotp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/enter_no"
+            android:layout_width="0dp"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/enter_your_phone_number"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@id/et_number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/getOtp" />
+
+        <EditText
+            android:id="@+id/et_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-black"
+            android:maxLength="4"
+            android:ems="3"
+            android:text="@string/_91"
+            android:paddingHorizontal="14dp"
+            android:background="@drawable/number_bg"
+            android:paddingVertical="7dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/enter_no" />
+
+        <EditText
+            android:id="@+id/et_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/number_bg"
+            android:fontFamily="sans-serif-black"
+            android:maxLength="10"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="7dp"
+            android:ems="7"
+            android:textSize="18sp"
+            android:text="@string/_9999999999"
+            app:layout_constraintStart_toEndOf="@id/et_code"
+            app:layout_constraintTop_toBottomOf="@id/enter_no" />
+
+        <Button
+            android:id="@+id/btn_continue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/color_F9CB10"
+            android:fontFamily="sans-serif-black"
+            android:paddingHorizontal="17dp"
+            android:paddingVertical="11dp"
+            android:text="@string/continue_btn"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_code" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="30dp"
+        tools:context=".LoginOtp">
+
+        <TextView
+            android:id="@+id/getOtp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:drawablePadding="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_vertical"
+            android:text="@string/_9999999999"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:drawableRightCompat="@drawable/edit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/enter_no"
+            android:layout_width="0dp"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/enter_the_otp"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@id/tv_time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/getOtp" />
+
+        <EditText
+            android:id="@+id/et_otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/number_bg"
+            android:ems="4"
+            android:fontFamily="sans-serif-black"
+            android:maxLength="4"
+            android:paddingHorizontal="14dp"
+            android:textColor="@color/black"
+            android:paddingVertical="7dp"
+            android:text="@string/_9999"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/enter_no" />
+
+
+        <Button
+            android:id="@+id/btn_continue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/color_F9CB10"
+            android:fontFamily="sans-serif-black"
+            android:paddingHorizontal="17dp"
+            android:paddingVertical="11dp"
+            android:text="@string/continue_btn"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_otp" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:backgroundTint="@color/color_F9CB10"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/_00_59"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/btn_continue"
+            app:layout_constraintStart_toEndOf="@id/btn_continue"
+            app:layout_constraintTop_toTopOf="@id/btn_continue" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
