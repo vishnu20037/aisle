@@ -173,13 +173,6 @@
                 android:scaleType="centerCrop"
                 tools:srcCompat="@tools:sample/avatars" />
 
-            <View
-                android:id="@+id/bg_second"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:alpha="0"
-                android:background="@drawable/photo_bg" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -236,19 +229,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:paddingVertical="12dp"
+            android:paddingVertical="6dp"
             app:layout_constraintBottom_toBottomOf="parent">
 
             <TextView
                 android:id="@+id/discover"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
                 android:fontFamily="sans-serif-medium"
-                android:padding="2dp"
+                android:gravity="center_horizontal"
+                android:paddingHorizontal="4dp"
                 android:text="@string/discover"
                 android:textColor="@color/color_9B9B9B"
                 android:textSize="12sp"
-                app:drawableTopCompat="@drawable/maches"
+                app:drawableTopCompat="@drawable/discover"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/notes"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -257,13 +252,14 @@
                 android:id="@+id/notes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:drawablePadding="12dp"
                 android:fontFamily="sans-serif-medium"
-                android:padding="2dp"
+                android:gravity="center_horizontal"
+                android:paddingHorizontal="4dp"
                 android:text="@string/notes"
                 android:textColor="@color/black"
                 android:textSize="12sp"
-                app:drawableTint="@color/black"
-                app:drawableTopCompat="@drawable/maches"
+                app:drawableTopCompat="@drawable/mail"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/matches"
                 app:layout_constraintStart_toEndOf="@id/discover" />
@@ -272,8 +268,10 @@
                 android:id="@+id/matches"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
                 android:fontFamily="sans-serif-medium"
-                android:padding="2dp"
+                android:gravity="center_horizontal"
+                android:paddingHorizontal="4dp"
                 android:text="@string/matches"
                 android:textColor="@color/color_9B9B9B"
                 android:textSize="12sp"
@@ -287,11 +285,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:padding="2dp"
+                android:gravity="center_horizontal"
+                android:paddingHorizontal="4dp"
                 android:text="@string/profile"
                 android:textColor="@color/color_9B9B9B"
                 android:textSize="12sp"
-                app:drawableTopCompat="@drawable/maches"
+                app:drawableTopCompat="@drawable/user"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/matches" />
