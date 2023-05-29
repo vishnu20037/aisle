@@ -19,6 +19,10 @@ import kotlinx.coroutines.runBlocking
 class LoginOtp : AppCompatActivity() {
     private lateinit var binding: ActivityLoginOtpBinding
     private var authToken: String? = null
+    var mobileNo: String = ""
+    var otp: String = ""
+    private lateinit var aisleAPIService: AisleAPIService
+    private lateinit var aisleRepo: AisleRepo
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_otp)
@@ -27,10 +31,28 @@ class LoginOtp : AppCompatActivity() {
         phoneNo?.let {
             binding.phoneNo.text = it
         }
-        val mobileNo = binding.phoneNo.text.toString()
-        val otp = binding.etOtp.text.toString()
-        val aisleAPIService = RetrofitHelper.getInstance(this).create(AisleAPIService::class.java)
-        val aisleRepo = AisleRepo(aisleAPIService)
+        mobileNo = binding.phoneNo.text.toString()
+        otp = binding.etOtp.text.toString()
+        aisleAPIService = RetrofitHelper.getInstance(this).create(AisleAPIService::class.java)
+        aisleRepo = AisleRepo(aisleAPIService)
+        onClicks()
+        timer()
+    }
+
+    private fun timer() {
+        val timer = object : CountDownTimer(60000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                val secondsRemaining = millisUntilFinished / 1000
+                binding.tvTime.text = "00: $secondsRemaining"
+            }
+
+            override fun onFinish() {
+            }
+        }
+        timer.start()
+    }
+
+    private fun onClicks() {
         val verifyOTPRequest = VerifyOTPRequest(mobileNo, otp)
         binding.btnContinue.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -49,15 +71,5 @@ class LoginOtp : AppCompatActivity() {
             intent.putExtra(Constants.phoneNo, binding.phoneNo.text.toString())
             startActivity(intent)
         }
-        val timer = object : CountDownTimer(60000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                val secondsRemaining = millisUntilFinished / 1000
-                binding.tvTime.text = "00: $secondsRemaining"
-            }
-            override fun onFinish() {
-            }
-        }
-        timer.start()
-
     }
 }

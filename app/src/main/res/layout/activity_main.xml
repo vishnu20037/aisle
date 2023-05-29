@@ -255,7 +255,6 @@
                 android:drawablePadding="12dp"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center_horizontal"
-                android:paddingHorizontal="4dp"
                 android:text="@string/notes"
                 android:textColor="@color/black"
                 android:textSize="12sp"
@@ -265,13 +264,27 @@
                 app:layout_constraintStart_toEndOf="@id/discover" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-10dp"
+                android:layout_marginTop="-6dp"
+                android:background="@drawable/count_bg"
+                android:fontFamily="sans-serif-black"
+                android:paddingHorizontal="6dp"
+                android:paddingVertical="2dp"
+                android:text="@{result.invitation_count}"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+                app:layout_constraintStart_toEndOf="@id/notes"
+                app:layout_constraintTop_toTopOf="@id/notes" />
+
+            <TextView
                 android:id="@+id/matches"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawablePadding="10dp"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center_horizontal"
-                android:paddingHorizontal="4dp"
                 android:text="@string/matches"
                 android:textColor="@color/color_9B9B9B"
                 android:textSize="12sp"
@@ -279,6 +292,21 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/profile"
                 app:layout_constraintStart_toEndOf="@id/notes" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-16dp"
+                android:layout_marginTop="-6dp"
+                android:background="@drawable/count_bg"
+                android:fontFamily="sans-serif-black"
+                android:paddingHorizontal="6dp"
+                android:paddingVertical="2dp"
+                android:text="@{result.likes_count}"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+                app:layout_constraintStart_toEndOf="@id/matches"
+                app:layout_constraintTop_toTopOf="@id/matches" />
 
             <TextView
                 android:id="@+id/profile"

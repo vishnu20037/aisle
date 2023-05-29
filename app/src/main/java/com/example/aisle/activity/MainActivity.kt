@@ -29,12 +29,17 @@ class MainActivity : AppCompatActivity() {
     private lateinit var aisleViewModel: AisleViewModel
     private var authToken: String? = null
     var nodeApiResult: NodeApiResult? = null
+    private lateinit var aisleRepo: AisleRepo
+    private lateinit var aisleAPIService: AisleAPIService
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        val aisleAPIService = RetrofitHelper.getInstance(this).create(AisleAPIService::class.java)
-        val aisleRepo = AisleRepo(aisleAPIService)
+        aisleAPIService = RetrofitHelper.getInstance(this).create(AisleAPIService::class.java)
+        aisleRepo = AisleRepo(aisleAPIService)
+        activityStart()
+    }
+    private fun activityStart() {
         if (isFirstLogin()) {
             val intent = Intent(this, LoginPhoneNo::class.java)
             startActivity(intent)
@@ -57,7 +62,6 @@ class MainActivity : AppCompatActivity() {
             }
             settingUpUi()
         }
-
     }
 
     private fun settingUpUi() {
@@ -67,7 +71,9 @@ class MainActivity : AppCompatActivity() {
                     it.invites.profiles.get(0).general_information.first_name,
                     it.likes.profiles.get(0).first_name,
                     it.likes.profiles.get(1).first_name,
-                    it.invites.profiles.get(0).general_information.age.toString()
+                    it.invites.profiles.get(0).general_information.age.toString(),
+                    if (it.invites.pending_invitations_count > 50) "50+" else it.invites.pending_invitations_count.toString(),
+                    if (it.likes.likes_received_count > 50) "50+" else it.likes.likes_received_count.toString()
                 )
             }
         binding.result = notesResult

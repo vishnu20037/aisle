@@ -18,6 +18,8 @@ import kotlinx.coroutines.runBlocking
 
 class LoginPhoneNo : AppCompatActivity() {
     private lateinit var binding: ActivityLoginPhoneNoBinding
+    private lateinit var aisleAPIService: AisleAPIService
+    private lateinit var aisleRepo: AisleRepo
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_phone_no)
@@ -29,9 +31,12 @@ class LoginPhoneNo : AppCompatActivity() {
             binding.etNumber.text = Editable.Factory.getInstance().newEditable(phone.substring(3))
             binding.etNumber.isEnabled = true
         }
+        aisleAPIService = RetrofitHelper.getInstance(this).create(AisleAPIService::class.java)
+        aisleRepo = AisleRepo(aisleAPIService)
+        onClicks()
+    }
+    private fun onClicks() {
         val phoneNo = binding.etCode.text.toString() + binding.etNumber.text.toString()
-        val aisleAPIService = RetrofitHelper.getInstance(this).create(AisleAPIService::class.java)
-        val aisleRepo = AisleRepo(aisleAPIService)
         val phoneNumberLoginRequest = PhoneNumberLoginRequest(phoneNo)
         binding.btnContinue.setOnClickListener {
             val intent = Intent(this, LoginOtp::class.java)
