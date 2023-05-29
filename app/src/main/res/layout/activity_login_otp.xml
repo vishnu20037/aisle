@@ -14,7 +14,7 @@
         tools:context=".LoginOtp">
 
         <TextView
-            android:id="@+id/getOtp"
+            android:id="@+id/phone_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
@@ -31,15 +31,15 @@
         <TextView
             android:id="@+id/enter_no"
             android:layout_width="0dp"
-            android:textColor="@color/black"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/enter_the_otp"
+            android:textColor="@color/black"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="@id/tv_time"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/getOtp" />
+            app:layout_constraintTop_toBottomOf="@id/phone_no" />
 
         <EditText
             android:id="@+id/et_otp"
@@ -48,12 +48,14 @@
             android:layout_marginTop="12dp"
             android:background="@drawable/number_bg"
             android:ems="4"
+            android:inputType="number"
+            android:enabled="true"
             android:fontFamily="sans-serif-black"
             android:maxLength="4"
             android:paddingHorizontal="14dp"
-            android:textColor="@color/black"
             android:paddingVertical="7dp"
             android:text="@string/_9999"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/enter_no" />
 

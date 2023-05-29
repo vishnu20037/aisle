@@ -10,8 +10,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingStart="30dp"
         android:background="@color/white"
+        android:paddingHorizontal="30dp"
         tools:context=".LoginPhoneNo">
 
         <TextView
@@ -28,11 +28,11 @@
         <TextView
             android:id="@+id/enter_no"
             android:layout_width="0dp"
-            android:textColor="@color/black"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/enter_your_phone_number"
+            android:textColor="@color/black"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="@id/et_number"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,12 +43,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:background="@drawable/number_bg"
+            android:ems="3"
             android:fontFamily="sans-serif-black"
             android:maxLength="4"
-            android:ems="3"
-            android:text="@string/_91"
             android:paddingHorizontal="14dp"
-            android:background="@drawable/number_bg"
+            android:hint="@string/_91"
             android:paddingVertical="7dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/enter_no" />
@@ -60,13 +60,15 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/number_bg"
+            android:ems="7"
+            android:inputType="number"
+            android:hint="@string/_9999999999"
             android:fontFamily="sans-serif-black"
             android:maxLength="10"
             android:paddingHorizontal="14dp"
             android:paddingVertical="7dp"
-            android:ems="7"
+            android:textColor="@color/black"
             android:textSize="18sp"
-            android:text="@string/_9999999999"
             app:layout_constraintStart_toEndOf="@id/et_code"
             app:layout_constraintTop_toBottomOf="@id/enter_no" />
 
