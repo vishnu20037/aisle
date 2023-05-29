@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:background="@color/white"
         android:paddingHorizontal="30dp"
-        tools:context=".LoginPhoneNo">
+        tools:context=".activity.LoginPhoneNo">
 
         <TextView
             android:id="@+id/getOtp"
@@ -45,12 +45,12 @@
             android:layout_marginTop="12dp"
             android:background="@drawable/number_bg"
             android:ems="3"
+            android:enabled="true"
             android:fontFamily="sans-serif-black"
             android:maxLength="4"
-            android:enabled="true"
             android:paddingHorizontal="14dp"
-            android:text="@string/_91"
             android:paddingVertical="7dp"
+            android:text="@string/_91"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/enter_no" />
 
@@ -62,13 +62,13 @@
             android:layout_marginTop="12dp"
             android:background="@drawable/number_bg"
             android:ems="7"
-            android:inputType="number"
             android:enabled="true"
-            android:text="@string/_9999999999"
             android:fontFamily="sans-serif-black"
+            android:inputType="number"
             android:maxLength="10"
             android:paddingHorizontal="14dp"
             android:paddingVertical="7dp"
+            android:text="@string/_9999999999"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@id/et_code"

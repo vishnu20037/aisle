@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="30dp"
-        tools:context=".LoginOtp">
+        tools:context=".activity.LoginOtp">
 
         <TextView
             android:id="@+id/phone_no"
@@ -48,9 +48,9 @@
             android:layout_marginTop="12dp"
             android:background="@drawable/number_bg"
             android:ems="4"
-            android:inputType="number"
             android:enabled="true"
             android:fontFamily="sans-serif-black"
+            android:inputType="number"
             android:maxLength="4"
             android:paddingHorizontal="14dp"
             android:paddingVertical="7dp"
